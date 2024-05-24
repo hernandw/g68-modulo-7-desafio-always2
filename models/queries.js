@@ -68,7 +68,7 @@ const updateUserQuery = async (name, rut, course, level, id) => {
 const deleteUserQuery = async (id) => {
     try {
       const sql = {
-        text: "DELETE FROM estudiantes WHERE id = $1 RETURNING *",
+        text: "DELETE FROM users WHERE id = $1 RETURNING *",
         values: [id],
       };
       const response = await pool.query(sql);
